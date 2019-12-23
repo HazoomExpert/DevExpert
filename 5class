@@ -1,10 +1,19 @@
-INSERT INTO `tips`.`dogs` (`name`, `age`, `breed`) VALUES ('dog1', '3', 'aski');
-INSERT INTO `tips`.`dogs` VALUES ('dog2', '5', 'aski2');
-INSERT INTO `tips`.`dogs` VALUES ('dog3', '6', 'aski2');
+import pymysql
 
-UPDATE `tips`.`dogs` SET `age` = '2' WHERE (`name` = 'dog3');
+try:
+    conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='Aa123456!', db='tips', autocommit=True)
+    cursor = conn.cursor()
+except:
+    print("Connection cannot be established")
 
+cursor.execute("INSERT INTO `tips`.`dogs` (`name`, `age`, `breed`) VALUES ('dog1', '3', 'aski');")
+cursor.execute("INSERT INTO `tips`.`dogs` (`name`, `age`, `breed`) VALUES ('dog2', '5', 'aski');")
+cursor.execute("INSERT INTO `tips`.`dogs` (`name`, `age`, `breed`) VALUES ('dog3', '6', 'aski');")
 
-DELETE FROM `tips`.`dogs` WHERE (`name` = 'dog3');
+cursor.execute("UPDATE `tips`.`dogs` SET `age` = '2' WHERE (`name` = 'dog3');")
 
-SELECT * FROM tips.dogs;
+cursor.execute("DELETE FROM `tips`.`dogs` WHERE (`name` = 'dog3');")
+
+cursor.execute("SELECT * FROM tips.dogs;")
+for row in cursor:
+    print(row)

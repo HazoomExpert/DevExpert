@@ -1,0 +1,10 @@
+INSERT INTO `tips`.`dogs` (`name`, `age`, `breed`) VALUES ('dog1', '3', 'aski');
+INSERT INTO `tips`.`dogs` VALUES ('dog2', '5', 'aski2');
+INSERT INTO `tips`.`dogs` VALUES ('dog3', '6', 'aski2');
+
+UPDATE `tips`.`dogs` SET `age` = '2' WHERE (`name` = 'dog3');
+
+
+DELETE FROM `tips`.`dogs` WHERE (`name` = 'dog3');
+
+SELECT * FROM tips.dogs;

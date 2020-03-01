@@ -5,6 +5,7 @@
       <mapping pattern="*.js.flow" type="Flow" />
       <mapping pattern="*.js.flow" type="Flow" />
       <mapping pattern="1" type="PHP" />
+      <mapping pattern="q6" type="PLAIN_TEXT" />
       <mapping pattern="init" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
